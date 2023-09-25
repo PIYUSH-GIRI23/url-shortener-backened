@@ -15,7 +15,6 @@ const random = async () => {
         url: url,
         short: await random()
       }
-      obj.shorturl='http://localhost/api/link/visit/'+obj.short;
       await collection.insertOne(obj);
       return obj.short;
     }
