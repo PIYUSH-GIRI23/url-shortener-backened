@@ -26,6 +26,10 @@ async function connectToDatabase() {
     console.error('Error connecting to database:', err);
     throw err;
   }
+  finally {
+    // Ensures that the client will close when you finish/error
+    await client.close();
+  }
 }
 
 module.exports = connectToDatabase;
